@@ -1,7 +1,7 @@
 {
-  "name": "gsof-google-analysics",
+  "name": "gsof-google-analytics",
   "version": "0.0.1",
-  "description": "a google analysics library.",
+  "description": "a google analytics library.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -10,7 +10,7 @@
   "keywords": [
     "gsof",
     "google",
-    "analysics"
+    "analytics"
   ],
   "author": "gaoshang",
   "license": "MIT",

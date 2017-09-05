@@ -21,4 +21,7 @@ if (tid) {
     }
     test();
 }
+else {
+    console.log('tid can not be empty. ');
+}
 //# sourceMappingURL=test.js.map
