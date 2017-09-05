@@ -1,0 +1,25 @@
+{
+  "name": "gsof-google-analysics",
+  "version": "0.0.1",
+  "description": "a google analysics library.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "gsof",
+    "google",
+    "analysics"
+  ],
+  "author": "gaoshang",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.81.0",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.26",
+    "@types/request": "^2.0.3"
+  }
+}
