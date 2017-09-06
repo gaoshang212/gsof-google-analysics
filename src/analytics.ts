@@ -24,6 +24,8 @@ export class analytics {
 
     private _queue: string[] = [];
 
+    private _proxy: string;
+
     /**
      * 
      * @param tid Tracking ID
@@ -32,7 +34,7 @@ export class analytics {
      * @param debug debug
      * @param version Version
      */
-    constructor(tid: string, cid?: string, userAgent: string = '', debug: boolean = false, version = 1) {
+    constructor(tid: string, cid?: string, userAgent: string = '', debug: boolean = false, proxy: string = '', version = 1) {
         this._debug = debug;
         // User-agent
         this._userAgent = userAgent;
@@ -42,6 +44,7 @@ export class analytics {
         this._version = version;
 
         this._cid = cid || uuid.v4();
+        this._proxy = proxy;
     }
 
     /**
@@ -330,6 +333,10 @@ export class analytics {
                 req['headers'] = { 'User-Agent': this._userAgent };
             }
 
+            if (this._proxy) {
+                req['proxy'] = this._proxy;
+            }
+
             request.post(req, (err, httpResponse, body) => {
                 if (err) return reject(err);
 
@@ -340,6 +347,7 @@ export class analytics {
 
                 if (httpResponse.statusCode === 200) {
                     if (this._debug) {
+                        console.log(json);
                         if (json.hitParsingResult[0].valid) {
                             return resolve();
                         }

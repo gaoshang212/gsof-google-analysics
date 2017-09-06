@@ -10,6 +10,7 @@ export declare class analytics {
     private _version;
     private _cid;
     private _queue;
+    private _proxy;
     /**
      *
      * @param tid Tracking ID
@@ -18,7 +19,7 @@ export declare class analytics {
      * @param debug debug
      * @param version Version
      */
-    constructor(tid: string, cid?: string, userAgent?: string, debug?: boolean, version?: number);
+    constructor(tid: string, cid?: string, userAgent?: string, debug?: boolean, proxy?: string, version?: number);
     /**
      * pageview
      * @param hostname Document hostname
